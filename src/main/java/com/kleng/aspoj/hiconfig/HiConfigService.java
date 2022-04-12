@@ -13,28 +13,30 @@ public class HiConfigService {
     private HiConfigMapper mapper;
 
     public List<HiConfigModel> getConfig(String namespace) {
-        List<HiConfigModel> models = mapper.getConfig(namespace);
-        if (models != null && models.size() > 0) {
-            CacheManager.getInstance().putMemoryCache(StringUtils.isEmpty(namespace)
-                    ? CacheManager.KEY.CONFIG : namespace, models.get(0));
-        }
-        return models;
+        return null;
+//        List<HiConfigModel> models = mapper.getConfig(namespace);
+//        if (models != null && models.size() > 0) {
+//            CacheManager.getInstance().putMemoryCache(StringUtils.isEmpty(namespace)
+//                    ? CacheManager.KEY.CONFIG : namespace, models.get(0));
+//        }
+//        return models;
     }
 
     public List<HiConfigModel> getAllConfig() {
-        List<HiConfigModel> models = mapper.getAllConfig();
-        if (models == null) {
-            return null;
-        }
-        for (HiConfigModel model : models) {
-            CacheManager.getInstance().putMemoryCache(model.namespace, model);
-        }
-        CacheManager.getInstance().needRefreshConfig = false;
-        return models;
+        return null;
+//        List<HiConfigModel> models = mapper.getAllConfig();
+//        if (models == null) {
+//            return null;
+//        }
+//        for (HiConfigModel model : models) {
+//            CacheManager.getInstance().putMemoryCache(model.namespace, model);
+//        }
+//        CacheManager.getInstance().needRefreshConfig = false;
+//        return models;
     }
 
     public void saveConfig(HiConfigModel model) {
-        mapper.saveConfig(model);
-        CacheManager.getInstance().putMemoryCache(model.namespace, model);
+//        mapper.saveConfig(model);
+//        CacheManager.getInstance().putMemoryCache(model.namespace, model);
     }
 }
