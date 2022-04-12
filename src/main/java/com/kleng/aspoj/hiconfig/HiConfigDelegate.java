@@ -41,15 +41,15 @@ public class HiConfigDelegate {
      * @return
      */
     private static Map getConfigHeader() {
-        RequestAttributes attrs = RequestContextHolder.getRequestAttributes();
-        if (attrs instanceof ServletRequestAttributes) {
-            HttpServletRequest request = ((ServletRequestAttributes) attrs).getRequest();
-            String hiConfig = request.getHeader(HI_CONFIG_KEY);
-            if (StringUtils.isEmpty(hiConfig)) return null;
-            Map<String, String> config = JsonUtil.fromJson(hiConfig, Map.class);
-            String namespace = config.get(HI_NAMES_PACE);
-            return namespace != null ? config : null;
-        }
+//        RequestAttributes attrs = RequestContextHolder.getRequestAttributes();
+//        if (attrs instanceof ServletRequestAttributes) {
+//            HttpServletRequest request = ((ServletRequestAttributes) attrs).getRequest();
+//            String hiConfig = request.getHeader(HI_CONFIG_KEY);
+//            if (StringUtils.isEmpty(hiConfig)) return null;
+//            Map<String, String> config = JsonUtil.fromJson(hiConfig, Map.class);
+//            String namespace = config.get(HI_NAMES_PACE);
+//            return namespace != null ? config : null;
+//        }
         return null;
     }
 }
